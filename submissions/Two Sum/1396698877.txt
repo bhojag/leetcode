@@ -1,0 +1,14 @@
+# Title: Two Sum
+# Submission ID: 1396698877
+# Status: Accepted
+# Date: September 20, 2024 at 11:14:48 PM GMT+5:30
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mem = {} # declare hashmap/dict
+        for i in range(len(nums)):
+            x = target - nums[i] #find the x by substracting target by number(nums[i])
+            if x in mem: #if there is a match of x in map then return key of x(index) and current index
+                return [mem[x], i]
+            mem[nums[i]] = i  # else add value and index to dict
+        return []
